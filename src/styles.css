@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+.mdc-tab-indicator__content--underline {
+    display: none !important;
+}
+
+.divChart {
+    width: 50%; 
+    margin: auto;
+}
+
+canvas {
+    width: 100%;
+}
