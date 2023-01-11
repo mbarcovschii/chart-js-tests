@@ -38,5 +38,4 @@ export class DoughnutChartComponent implements OnInit {
 
     this.chart?.render();
   }
-
 }
