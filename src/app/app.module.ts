@@ -17,6 +17,7 @@ import { ScatterChartComponent } from './chart-components/scatter-chart/scatter-
 import { DoughnutChartComponent } from './chart-components/doughnut-chart/doughnut-chart.component';
 import { RadarChartComponent } from './chart-components/radar-chart/radar-chart.component';
 import { PieChartComponent } from './chart-components/pie-chart/pie-chart.component';
+import { PolarChartComponent } from './chart-components/polar-chart/polar-chart.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PieChartComponent } from './chart-components/pie-chart/pie-chart.compon
     LineChartComponent,
     DoughnutChartComponent,
     RadarChartComponent,
-    PieChartComponent
+    PieChartComponent,
+    PolarChartComponent
   ],
   imports: [
     BrowserModule,

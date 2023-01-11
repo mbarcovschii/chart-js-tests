@@ -7,6 +7,7 @@ import { DoughnutChartComponent } from '../chart-components/doughnut-chart/dough
 import { RadarChartComponent } from '../chart-components/radar-chart/radar-chart.component';
 import { ScatterChartComponent } from '../chart-components/scatter-chart/scatter-chart.component';
 import { PieChartComponent } from '../chart-components/pie-chart/pie-chart.component';
+import { PolarChartComponent } from '../chart-components/polar-chart/polar-chart.component';
 
 @Component({
   selector: 'app-main-page',
@@ -20,6 +21,7 @@ export class MainPageComponent implements OnInit {
   @ViewChild(DoughnutChartComponent) doughtnutChart?: DoughnutChartComponent;
   @ViewChild(RadarChartComponent) radarChart?: RadarChartComponent;
   @ViewChild(PieChartComponent) pieChart?: PieChartComponent;
+  @ViewChild(PolarChartComponent) polarChart?: PolarChartComponent;
   @ViewChild(ScatterChartComponent) scatterChart?: ScatterChartComponent;
 
   constructor() { 
@@ -40,6 +42,8 @@ export class MainPageComponent implements OnInit {
       this.radarChart?.renderChart();
     } else if (tab == 'Pie') {
       this.pieChart?.renderChart();
+    } else if (tab == 'Polar Area') {
+      this.polarChart?.renderChart();
     } else if (tab == 'Scatter') {
       this.scatterChart?.renderChart();
     }
