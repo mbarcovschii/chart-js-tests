@@ -14,6 +14,7 @@ import { NgChartsModule } from 'ng2-charts';
 import { LineChartComponent } from './chart-components/line-chart/line-chart.component';
 import { BarChartComponent } from './chart-components/bar-chart/bar-chart.component';
 import { ScatterChartComponent } from './chart-components/scatter-chart/scatter-chart.component';
+import { DoughnutChartComponent } from './chart-components/doughnut-chart/doughnut-chart.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ScatterChartComponent } from './chart-components/scatter-chart/scatter-
     ScatterChartComponent,
     BarChartComponent,
     MainPageComponent,
-    LineChartComponent
+    LineChartComponent,
+    DoughnutChartComponent
   ],
   imports: [
     BrowserModule,
