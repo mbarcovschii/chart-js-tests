@@ -1,21 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { ChartConfiguration, Plugin } from 'chart.js';
+import { ChartConfiguration } from 'chart.js';
 
 @Component({
   selector: 'app-scatter-chart',
   templateUrl: './scatter-chart.component.html',
   styleUrls: ['./scatter-chart.component.css']
 })
-export class ScatterPlotsChartComponentComponent implements OnInit {
+export class ScatterChartComponent implements OnInit {
 
-  public scatterChartType: ChartConfiguration<'scatter'>['type'];
-  public scatterChartData: ChartConfiguration<'scatter'>['data'];
-  public scatterChartOptions: ChartConfiguration<'scatter'>['options'];
-  public scatterChartPlugins: Plugin<'scatter'>[];
-  public scatterChartLegend: boolean;
-  public scatterChartLabels: string[] = [ 'Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running' ];
+  public scatterChartType: ChartConfiguration<'scatter'>['type'] = 'scatter';
+  public scatterChartData?: ChartConfiguration<'scatter'>['data'];
+  public scatterChartOptions?: ChartConfiguration<'scatter'>['options'];
+  public scatterChartLegend?: boolean;
+  public scatterChartLabels?: string[] = [ 'Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running' ];
 
   constructor() {
+  }
+
+  ngOnInit(): void {
+    this.renderChart();
+  }
+
+  public renderChart(): void {
     this.scatterChartType = 'scatter';
     this.scatterChartData = {
       labels: this.scatterChartLabels,
@@ -36,10 +42,6 @@ export class ScatterPlotsChartComponentComponent implements OnInit {
     this.scatterChartOptions = {
       responsive: true,
     };
-    this.scatterChartPlugins = [];
     this.scatterChartLegend = true;
-  }
-
-  ngOnInit(): void {
   }
 }

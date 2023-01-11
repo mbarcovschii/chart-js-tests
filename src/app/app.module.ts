@@ -6,17 +6,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ScatterPlotsChartComponentComponent } from './chart-components/scatter-plots-chart-component/scatter-chart.component';
-import { BarChartComponent } from './chart-components/bar-chart/bar-chart.component';
-import { NgChartsModule } from 'ng2-charts';
+
 import { MainPageComponent } from './main-page/main-page.component';
+
+import { NgChartsModule } from 'ng2-charts';
+
+import { LineChartComponent } from './chart-components/line-chart/line-chart.component';
+import { BarChartComponent } from './chart-components/bar-chart/bar-chart.component';
+import { ScatterChartComponent } from './chart-components/scatter-chart/scatter-chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ScatterPlotsChartComponentComponent,
+    ScatterChartComponent,
     BarChartComponent,
-    MainPageComponent
+    MainPageComponent,
+    LineChartComponent
   ],
   imports: [
     BrowserModule,

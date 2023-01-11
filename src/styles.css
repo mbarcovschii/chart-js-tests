@@ -1,12 +1,10 @@
-.mdc-tab-indicator__content--underline {
-    display: none !important;
-}
-
 .divChart {
-    width: 50%; 
+    display: block;
+    width: 100%;
     margin: auto;
 }
 
 canvas {
-    width: 100%;
+    width: 50%;
+    margin: auto;
 }
