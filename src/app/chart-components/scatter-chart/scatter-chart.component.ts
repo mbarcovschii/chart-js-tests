@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartConfiguration } from 'chart.js';
+import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
   selector: 'app-scatter-chart',
@@ -7,6 +8,8 @@ import { ChartConfiguration } from 'chart.js';
   styleUrls: ['./scatter-chart.component.css']
 })
 export class ScatterChartComponent implements OnInit {
+
+  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
 
   public scatterChartType: ChartConfiguration<'scatter'>['type'] = 'scatter';
   public scatterChartData?: ChartConfiguration<'scatter'>['data'];
@@ -43,5 +46,6 @@ export class ScatterChartComponent implements OnInit {
       responsive: true,
     };
     this.scatterChartLegend = true;
+    this.chart?.render();
   }
 }

@@ -24,11 +24,11 @@ export class MainPageComponent implements OnInit {
   public onChange(event: MatTabChangeEvent) {
     const tab = event.tab.textLabel;
     if (tab == 'Line') {
-      // this.lineChart?.renderChart();
+      this.lineChart?.renderChart();
     } else if (tab == 'Bar') {
-      // this.barChart?.renderChart();
+      this.barChart?.renderChart();
     } else if (tab == 'Scatter') {
-      // this.scatterChart?.renderChart();
+      this.scatterChart?.renderChart();
     }
   }
 }

@@ -1,19 +1,13 @@
 <div>
-    <mat-tab-group mat-align-tabs="center" animationDuration="0ms" (selectedTabChange)="onChange($event)">  
+    <mat-tab-group mat-align-tabs="center" animationDuration="500ms" (selectedTabChange)="onChange($event)">  
         <mat-tab label="Line">
-            <ng-template matTabContent>
-                <app-line-chart></app-line-chart>
-            </ng-template>
+            <app-line-chart></app-line-chart>
         </mat-tab>  
         <mat-tab label="Bar">
-            <ng-template matTabContent>
-                <app-bar-chart></app-bar-chart>
-            </ng-template>
+            <app-bar-chart></app-bar-chart>
         </mat-tab>  
         <mat-tab label="Scatter">
-            <ng-template matTabContent>
-                <app-scatter-chart></app-scatter-chart>
-            </ng-template>
+            <app-scatter-chart></app-scatter-chart>            
          </mat-tab>  
     </mat-tab-group>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ChartConfiguration, Chart } from 'chart.js';
+import { ChartConfiguration, Chart, ChartEvent } from 'chart.js';
 import { default as Annotation } from 'chartjs-plugin-annotation';
 import { BaseChartDirective } from 'ng2-charts';
 
@@ -114,5 +114,55 @@ export class LineChartComponent implements OnInit {
     this.lineChartLegend = true;
 
     this.chart?.render();
+  }
+
+  private static generateNumber(i: number): number {
+    return Math.floor((Math.random() * (i < 2 ? 100 : 1000)) + 1);
+  }
+
+  public randomize(): void {
+    if (this.lineChartData) {
+      for (let i = 0; i < this.lineChartData.datasets.length; i++) {
+        for (let j = 0; j < this.lineChartData.datasets[i].data.length; j++) {
+          this.lineChartData.datasets[i].data[j] = LineChartComponent.generateNumber(i);
+        }
+      }
+      this.chart?.update();
+    }
+  }
+
+  // events
+  public chartClicked({ event, active }: { event?: ChartEvent, active?: {}[] }): void {
+    console.log(event, active);
+  }
+
+  public chartHovered({ event, active }: { event?: ChartEvent, active?: {}[] }): void {
+    console.log(event, active);
+  }
+
+  public hideOne(): void {
+    const isHidden = this.chart?.isDatasetHidden(1);
+    this.chart?.hideDataset(1, !isHidden);
+  }
+
+  public pushOne(): void {
+    if (this.lineChartData) {
+      this.lineChartData.datasets.forEach((x, i) => {
+        const num = LineChartComponent.generateNumber(i);
+        x.data.push(num);
+      });
+      this.lineChartData?.labels?.push(`Label ${this.lineChartData.labels.length}`);
+
+      this.chart?.update();
+    }
+  }
+
+  public changeColor(): void {
+    if (this.lineChartData) {
+      this.lineChartData.datasets[2].borderColor = 'green';
+      this.lineChartData.datasets[2].backgroundColor = `rgba(0, 255, 0, 0.3)`;
+
+      this.chart?.update();
+    }
   }
 }

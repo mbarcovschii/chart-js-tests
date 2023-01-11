@@ -32,7 +32,7 @@ export class BarChartComponent implements OnInit {
       ]
     };
     this.barChartOptions = {
-      responsive: false,
+      responsive: true
     };
     this.barChartLegend = true;
     this.chart?.render();
