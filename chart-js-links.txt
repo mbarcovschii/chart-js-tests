@@ -1,0 +1,7 @@
+https://www.chartjs.org/docs/latest/ - JavaScript library and basic info
+https://www.chartjs.org/docs/latest/api/interfaces/ChartTypeRegistry.html - API
+https://www.chartjs.org/docs/latest/samples/information.html - Samples
+https://valor-software.com/ng2-charts/#GeneralInfo - Angular Integration General Info
+https://github.com/valor-software/ng2-charts - Angular Integration
+https://www.chartjs.org/chartjs-plugin-annotation/latest/guide/ - Annotation Plugin
+https://www.npmjs.com/package/ng2-charts - npmjs
