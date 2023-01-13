@@ -164,4 +164,17 @@ export class LineChartComponent implements OnInit {
       this.chart?.update();
     }
   }
+
+  public changeFilling(): void {
+    if (this.lineChartData) {
+      for (let i = 0; i < this.lineChartData.datasets.length; i++) {
+        let backgroundColor = this.lineChartData.datasets[i].backgroundColor;
+        let backgroundColorParts = (backgroundColor as string).replaceAll(/[^\d.,]/g, "").split(",");
+        let opacity = backgroundColorParts[3] === '0' ? '0.5' : '0'; 
+        this.lineChartData.datasets[i].backgroundColor = 'rgba(' + backgroundColorParts[0] + ',' + backgroundColorParts[1] + ',' + backgroundColorParts[2] + ',' + opacity + ')';
+      }
+
+      this.chart?.update();
+    }
+  }
 }
