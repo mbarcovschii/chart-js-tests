@@ -157,8 +157,9 @@ export class LineChartComponent implements OnInit {
         let o = Math.round;
         let r = Math.random; 
         let s = 255;
-        this.lineChartData.datasets[i].borderColor = 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + '0.5' + ')';
-        this.lineChartData.datasets[i].backgroundColor = 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + '0.5' + ')';
+        let randomColor = 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',';
+        this.lineChartData.datasets[i].borderColor = randomColor + '1)'
+        this.lineChartData.datasets[i].backgroundColor = randomColor + '0.5)'
       }
 
       this.chart?.update();
