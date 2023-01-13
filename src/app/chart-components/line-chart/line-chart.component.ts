@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ChartConfiguration, Chart, ChartEvent } from 'chart.js';
+import { ChartConfiguration, Chart } from 'chart.js';
 import { default as Annotation } from 'chartjs-plugin-annotation';
 import { BaseChartDirective } from 'ng2-charts';
 
@@ -16,6 +16,7 @@ export class LineChartComponent implements OnInit {
   public lineChartData?: ChartConfiguration<'line'>['data'];
   public lineChartOptions?: ChartConfiguration<'line'>['options'];
   public lineChartLegend?: boolean;
+  public lineChartLabels?: string[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
   constructor() {
   }
@@ -27,6 +28,7 @@ export class LineChartComponent implements OnInit {
 
   public renderChart(): void {
     this.lineChartType = 'line';
+
     this.lineChartData = {
       datasets: [
         {
@@ -64,8 +66,9 @@ export class LineChartComponent implements OnInit {
           fill: 'origin',
         }
       ],
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July']
+      labels: this.lineChartLabels
     };
+
     this.lineChartOptions = {
       elements: {
         line: {
@@ -74,19 +77,18 @@ export class LineChartComponent implements OnInit {
       },
       scales: {
         y: {
-          position: 'left',
+          position: 'left'
         },
         y1: {
           position: 'right',
           grid: {
-            color: 'rgba(255,0,0,0.3)',
+            color: 'rgba(255,0,0,0.3)'
           },
           ticks: {
             color: 'red'
           }
         }
       },
-
       plugins: {
         legend: { display: true },
         annotation: {
@@ -111,6 +113,7 @@ export class LineChartComponent implements OnInit {
         }
       }
     };
+
     this.lineChartLegend = true;
 
     this.chart?.render();
@@ -129,15 +132,6 @@ export class LineChartComponent implements OnInit {
       }
       this.chart?.update();
     }
-  }
-
-  // events
-  public chartClicked({ event, active }: { event?: ChartEvent, active?: {}[] }): void {
-    console.log(event, active);
-  }
-
-  public chartHovered({ event, active }: { event?: ChartEvent, active?: {}[] }): void {
-    console.log(event, active);
   }
 
   public hideOne(): void {
@@ -159,8 +153,13 @@ export class LineChartComponent implements OnInit {
 
   public changeColor(): void {
     if (this.lineChartData) {
-      this.lineChartData.datasets[2].borderColor = 'green';
-      this.lineChartData.datasets[2].backgroundColor = `rgba(0, 255, 0, 0.3)`;
+      for (let i = 0; i < this.lineChartData.datasets.length; i++) {
+        let o = Math.round;
+        let r = Math.random; 
+        let s = 255;
+        this.lineChartData.datasets[i].borderColor = 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + '0.5' + ')';
+        this.lineChartData.datasets[i].backgroundColor = 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + '0.5' + ')';
+      }
 
       this.chart?.update();
     }

@@ -5,6 +5,7 @@
         [options]="lineChartOptions"
         [legend]="lineChartLegend">
     </canvas>
+    <mat-divider></mat-divider>
     <table *ngIf="lineChartData">
         <tr>
           <th *ngFor="let label of lineChartData.labels">{{label}}</th>
@@ -13,6 +14,7 @@
           <td *ngFor="let label of lineChartData.labels; let j=index">{{d && d.data[j]}}</td>
         </tr>
       </table>
+      <mat-divider></mat-divider>
       <div class="button-row">
         <button mat-button mat-raised-button color="primary" (click)="randomize()">Randomize</button>
         <button mat-button mat-raised-button color="primary" (click)="pushOne()">Push</button>

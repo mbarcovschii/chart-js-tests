@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatDividerModule } from '@angular/material/divider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -37,6 +38,7 @@ import { BubbleChartComponent } from './chart-components/bubble-chart/bubble-cha
     BrowserModule,
     AppRoutingModule,
     MatTabsModule,
+    MatDividerModule,
     BrowserAnimationsModule,
     NgChartsModule
   ],
