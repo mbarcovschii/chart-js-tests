@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatDividerModule } from '@angular/material/divider';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatResizableModule } from '@angular/material/resizable';
+import { DragDropModule } from '@angular/cdk/drag-drop'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +22,8 @@ import { RadarChartComponent } from './chart-components/radar-chart/radar-chart.
 import { PieChartComponent } from './chart-components/pie-chart/pie-chart.component';
 import { PolarChartComponent } from './chart-components/polar-chart/polar-chart.component';
 import { BubbleChartComponent } from './chart-components/bubble-chart/bubble-chart.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardPieChartComponent } from './dashboard/dashboard-pie-chart/dashboard-pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +36,16 @@ import { BubbleChartComponent } from './chart-components/bubble-chart/bubble-cha
     RadarChartComponent,
     PieChartComponent,
     PolarChartComponent,
-    BubbleChartComponent
+    BubbleChartComponent,
+    DashboardComponent,
+    DashboardPieChartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatTabsModule,
     MatDividerModule,
+    DragDropModule,
     BrowserAnimationsModule,
     NgChartsModule
   ],
