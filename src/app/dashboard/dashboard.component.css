@@ -3,12 +3,13 @@
     overflow: hidden;
     border-radius: 10px;
     background-color: #f4f5f5;
-    box-shadow: (0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+    padding: 20px;
 }
 
 .dashboard-chart {
     position: relative;
-    border-bottom: solid 1px #ccc;
+    width: 100%;
+    border: 1px solid #ccc;
     color: rgba(0, 0, 0, 0.87);
     display: flex;
     flex-direction: row;
@@ -18,6 +19,21 @@
     background: white;
     font-size: 14px;
     min-height: 100px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.2),
+    0 6px 8px 1px rgba(0, 0, 0, 0.14),
+    0 1px 12px 2px rgba(0, 0, 0, 0.12);
+}
+
+.dashboard-chart:hover {
+    border: 2px solid #ccc;
+}
+
+.dashboard-chart:active {
+    box-shadow: 0 14px 14px -12px rgba(0, 0, 0, 0.2),
+        0 16px 18px 9px rgba(0, 0, 0, 0.14),
+        0 11px 22px 10px rgba(0, 0, 0, 0.12);
 }
 
 .dashboard-chart-handle {
@@ -26,6 +42,7 @@
     width: 100%;
     min-height: 30px;
     text-align: center;
+    border-radius: 10px;
     color: #ccc;
     cursor: move;
     transition: background-color 0.2s ease-out 100ms
@@ -33,12 +50,6 @@
 
 .dashboard-chart-handle:hover {
     background-color: rgba(204, 204, 204, 0.8);
-}
-
-.dashboard-chart:active {
-    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
-        0 8px 10px 1px rgba(0, 0, 0, 0.14),
-        0 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
 
 .cdk-drag-preview {
