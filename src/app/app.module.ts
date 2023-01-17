@@ -1,19 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatResizableModule } from '@angular/material/resizable';
 import { DragDropModule } from '@angular/cdk/drag-drop'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { MainPageComponent } from './main-page/main-page.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { NgChartsModule } from 'ng2-charts';
 
+import { MainPageComponent } from './main-page/main-page.component';
 import { LineChartComponent } from './chart-components/line-chart/line-chart.component';
 import { BarChartComponent } from './chart-components/bar-chart/bar-chart.component';
 import { ScatterChartComponent } from './chart-components/scatter-chart/scatter-chart.component';
